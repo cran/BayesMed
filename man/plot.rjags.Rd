@@ -19,7 +19,7 @@ additional arguments to be passed on to the traceplot method, such as graphical 
 }
 }
 \references{
-Nuijten, M.B., Wetzels, R., Matzke, D., Dolan, C. V., & Wagenmakers, E.-J. (2014). A default Bayesian hypothesis test for mediation. Manuscript submitted for publication.
+Nuijten, M. B., Wetzels, R., Matzke, D., Dolan, C. V., & Wagenmakers, E.-J. (2014). A default Bayesian hypothesis test for mediation. Behavior Research Methods. doi: 10.3758/s13428-014-0470-2
 
 Su, Y.-S., & Yajima, M. (2012). R2jags: A package for running jags from Rb[Computer software manual]. Available from http://CRAN.R-project.org/package=R2jags (R package version 0.03-08)
 }
@@ -33,8 +33,8 @@ Michele B. Nuijten <m.b.nuijten@uvt.nl>, Ruud Wetzels, Dora Matzke, Conor V. Dol
 X <- rnorm(50,0,1)
 Y <- .3*X + rnorm(50,0,1)
 
-# save jzs_corSD output
-res <- jzs_corSD(X,Y)
+# save jzs_cor output
+res <- jzs_cor(X,Y)
 
 # plot results
 plot(res$jagssamples)
@@ -50,8 +50,8 @@ X <- rnorm(50,0,1)
 M <- a*X + rnorm(50,0,1)
 Y <- t_prime*X + b*M + rnorm(50,0,1)
 
-# run jzs_medSD
-res2 <- jzs_medSD(independent=X,dependent=Y,mediator=M,SDmethod='dnorm')
+# run jzs_med
+res2 <- jzs_med(independent=X,dependent=Y,mediator=M)
 
 # plot resulting chains for alpha, beta, and tau_prime
 plot(res2$jagssamplesA)

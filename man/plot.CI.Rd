@@ -18,7 +18,7 @@ additional arguments to be passed on to the plot method, such as graphical param
 }
 }
 \references{
-Nuijten, M.B., Wetzels, R., Matzke, D., Dolan, C. V., & Wagenmakers, E.-J. (2014). A default Bayesian hypothesis test for mediation. Manuscript submitted for publication. 
+Nuijten, M. B., Wetzels, R., Matzke, D., Dolan, C. V., & Wagenmakers, E.-J. (2014). A default Bayesian hypothesis test for mediation. Behavior Research Methods. doi: 10.3758/s13428-014-0470-2
 
 Yuan, Y., & MacKinnon, D. (2009). Bayesian mediation analysis. Psychological Methods, 14, 301-322.
 }
@@ -39,8 +39,8 @@ X <- rnorm(50,0,1)
 M <- a*X + rnorm(50,0,1)
 Y <- t_prime*X + b*M + rnorm(50,0,1)
 
-# run jzs_medSD
-res <- jzs_medSD(independent=X,dependent=Y,mediator=M)
+# run jzs_med
+res <- jzs_med(independent=X,dependent=Y,mediator=M)
 
 # plot posterior distribution of a*b
 plot(res$ab_samples)
